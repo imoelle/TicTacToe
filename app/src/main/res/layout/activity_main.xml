@@ -50,7 +50,9 @@
             android:layout_height="90dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
-            app:srcCompat="@drawable/redchip" />
+            android:onClick="isClicked"
+            android:tag="0:0"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos01"
@@ -58,7 +60,9 @@
             android:layout_height="90dp"
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
-            app:srcCompat="@drawable/yellowchip" />
+            android:onClick="isClicked"
+            android:tag="0:1"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos02"
@@ -66,7 +70,9 @@
             android:layout_height="90dp"
             android:layout_marginStart="17dp"
             android:layout_marginLeft="17dp"
-            app:srcCompat="@drawable/redchip" />
+            android:onClick="isClicked"
+            android:tag="0:2"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos10"
@@ -75,7 +81,9 @@
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/yellowchip" />
+            android:onClick="isClicked"
+            android:tag="1:0"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos11"
@@ -84,7 +92,9 @@
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/redchip" />
+            android:onClick="isClicked"
+            android:tag="1:1"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos12"
@@ -93,7 +103,9 @@
             android:layout_marginStart="17dp"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/yellowchip" />
+            android:onClick="isClicked"
+            android:tag="1:2"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos20"
@@ -102,7 +114,9 @@
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/redchip" />
+            android:onClick="isClicked"
+            android:tag="2:0"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos21"
@@ -111,7 +125,9 @@
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/yellowchip" />
+            android:onClick="isClicked"
+            android:tag="2:1"
+            />
 
         <ImageView
             android:id="@+id/imgViewPos22"
@@ -120,7 +136,9 @@
             android:layout_marginStart="17dp"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/redchip" />
+            android:onClick="isClicked"
+            android:tag="2:2"
+            />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -133,6 +151,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
+        android:onClick="logPlayGround"
         android:text="Start new game"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -148,7 +167,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:alpha=".4"
+        android:alpha=".45"
         android:text="2021 DivisionIO (Ingo Möller)"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/purple_200"
