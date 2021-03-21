@@ -3,10 +3,11 @@ package divisionio.example.tictactoe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -16,11 +17,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void isClicked(View view) throws InterruptedException {
         ImageView image = (ImageView) view;
-        image.setTranslationY(-1500);
-        image.setImageResource((player == 0) ? R.drawable.redchip : R.drawable.yellowchip);
-        image.animate().translationYBy(1500).setDuration(300);
-        if(player==0) player++;
-        else player--;
+        int[] location = getLocationFromString(image);
+
+        if (locationIsEmpty(location[0], location[1])) {
+            if (player == 0) {
+                setGameIndex(location[0], location[1]);
+                player = 1;
+            } else {
+                setGameIndex(location[0], location[1]);
+                player = 0;
+            }
+            chipAnimation(player, image);
+            setPlayersTurn(player);
+        } else {
+            Toast.makeText(this, "This position is occupied", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -29,6 +40,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initPlayGround();
+    }
+
+    // Tag Management
+    private int[] getLocationFromString(ImageView view) {
+        String[] locationString = view.getTag().toString().split(":");
+        return getCoordinates(locationString);
+    }
+
+    private int[] getCoordinates(String[] locationAsString) {
+        int[] locationAsInt = new int[locationAsString.length];
+
+        for (int i = 0; i < locationAsInt.length; i++)
+            locationAsInt[i] = Integer.parseInt(locationAsString[i]);
+
+        return locationAsInt;
+    }
+
+    // Game Management
+    private void setPlayersTurn(int player) {
+        TextView playersTurn = (TextView) findViewById(R.id.txtViewGameState);
+        playersTurn.setText((player != 0) ? "It is player two's turn" : "It is player one's turn");
+    }
+
+    private boolean locationIsEmpty(int x, int y) {
+        return playGround[x][y] < 0;
+    }
+
+    private void setGameIndex(int row, int column) {
+        playGround[row][column] = player;
+    }
+
+    // Animation Methods
+    private void chipAnimation(int player, ImageView image) {
+        image.setTranslationY(-1500);
+        image.setImageResource((player == 0) ? R.drawable.redchip : R.drawable.yellowchip);
+        image.animate().translationYBy(1500).setDuration(300);
     }
 
     // Methods for Playground
