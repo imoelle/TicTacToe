@@ -142,7 +142,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:onClick="logPlayGround"
+        android:onClick="buttonClicked"
         android:text="Start new game"
         android:textColor="@color/black"
         android:textStyle="bold"

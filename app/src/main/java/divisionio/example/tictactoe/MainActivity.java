@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private static int[] playGround = new int[9];
     private static int player = 0;
-    private static boolean gameReady = true;
+    private boolean gameReady = true;
     private TextView textGameState;
     private Button startNewGame;
 
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         textGameState = (TextView) findViewById(R.id.txtViewGameState);
@@ -60,19 +61,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkWinner(int[] playGround) {
-        int[][] winningPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6},
+        int[][] win = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6},
                 {1, 4, 7}, {2, 5, 8}, {2, 4, 6}, {0, 4, 8}};
 
-        for (int[] winningPosition : winningPositions) {
+        for (int[] position : win) {
 
-            if ((playGround[winningPosition[0]] == playGround[winningPosition[1]]) &&
-                    (playGround[winningPosition[1]] == playGround[winningPosition[2]]) &&
-                    (playGround[winningPosition[0]] != -1)) {
+            if ((playGround[position[0]] == playGround[position[1]]) &&
+                    (playGround[position[1]] == playGround[position[2]]) &&
+                    (playGround[position[0]] != -1)) {
 
                 gameReady = false;
                 printWinner(player);
                 startNewGame.setText("Start new game");
-            } else {
+            }
+            else {
 
                 gameReady = false;
 
