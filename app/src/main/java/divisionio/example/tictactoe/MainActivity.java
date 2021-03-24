@@ -124,3 +124,13 @@ public class MainActivity extends AppCompatActivity {
         Log.i("playGround", Arrays.toString(playGround));
     }
 }
+
+/*
+ * Classes to define:
+ *
+ * Class Player -> All data from Players
+ * Class Playground -> All data from Playground
+ * Class Sprite -> all data about pawns in the game
+ * Class Animation
+ * Class Game
+ */
