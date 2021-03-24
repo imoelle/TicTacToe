@@ -51,8 +51,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
             android:onClick="isClicked"
-            android:tag="0:0"
-            />
+            android:tag="0" />
 
         <ImageView
             android:id="@+id/imgViewPos01"
@@ -61,8 +60,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
             android:onClick="isClicked"
-            android:tag="0:1"
-            />
+            android:tag="1" />
 
         <ImageView
             android:id="@+id/imgViewPos02"
@@ -71,8 +69,7 @@
             android:layout_marginStart="17dp"
             android:layout_marginLeft="17dp"
             android:onClick="isClicked"
-            android:tag="0:2"
-            />
+            android:tag="2" />
 
         <ImageView
             android:id="@+id/imgViewPos10"
@@ -82,8 +79,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="1:0"
-            />
+            android:tag="3" />
 
         <ImageView
             android:id="@+id/imgViewPos11"
@@ -93,8 +89,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="1:1"
-            />
+            android:tag="4" />
 
         <ImageView
             android:id="@+id/imgViewPos12"
@@ -104,8 +99,7 @@
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="1:2"
-            />
+            android:tag="5" />
 
         <ImageView
             android:id="@+id/imgViewPos20"
@@ -115,8 +109,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="2:0"
-            />
+            android:tag="6" />
 
         <ImageView
             android:id="@+id/imgViewPos21"
@@ -126,8 +119,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="2:1"
-            />
+            android:tag="7" />
 
         <ImageView
             android:id="@+id/imgViewPos22"
@@ -137,8 +129,7 @@
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
             android:onClick="isClicked"
-            android:tag="2:2"
-            />
+            android:tag="8" />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -151,7 +142,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:onClick="logPlayGround"
+        android:onClick="buttonClicked"
         android:text="Start new game"
         android:textColor="@color/black"
         android:textStyle="bold"
