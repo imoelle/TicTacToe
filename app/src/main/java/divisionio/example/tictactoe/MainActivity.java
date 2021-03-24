@@ -49,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         startNewGame.setText("Reset Game");
 
         initPlayGround();
+
+        Player[] arrayOfPlayers = {new Player(textGameState), new Player(textGameState), new Player(textGameState), new Player(textGameState)};
+
+        for(Player p : arrayOfPlayers) {
+            Log.i("Player", "" + p.getPlayerName());
+        }
+        Log.i("PlayerSize", String.valueOf(Player.getNumberOfPlayers()) );
+
     }
 
     // Game Management
@@ -134,3 +142,38 @@ public class MainActivity extends AppCompatActivity {
  * Class Animation
  * Class Game
  */
+
+//--------------------------- create classes ---------------------------//
+//-------------  classes stored in their own files later ---------------//
+//----------------------------------------------------------------------//
+
+class Player {
+
+    private static int numberOfPlayers;
+
+    private final TextView playerInformation;
+    private final String playerName;
+
+    public Player(String playerName, View textView) {
+        this.playerName = playerName;
+        this.playerInformation = (TextView) textView;
+
+        numberOfPlayers++;
+    }
+
+    public Player(View textView) {
+        this("Player " + numberOfPlayers, textView);
+    }
+
+    public static int getNumberOfPlayers() {
+        return numberOfPlayers;
+    }
+
+    public TextView getPlayerInformation() {
+        return playerInformation;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+}
