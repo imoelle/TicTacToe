@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.gridlayout.widget.GridLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -150,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
 class Player {
 
     private static int numberOfPlayers;
+    private static TextView playerInformation;
 
-    private final TextView playerInformation;
     private final String playerName;
 
     public Player(String playerName, View textView) {
@@ -167,6 +169,10 @@ class Player {
 
     public static int getNumberOfPlayers() {
         return numberOfPlayers;
+    }
+
+    public static void setNumberOfPlayers(int numberOfPlayers) {
+        Player.numberOfPlayers = numberOfPlayers;
     }
 
     public TextView getPlayerInformation() {
